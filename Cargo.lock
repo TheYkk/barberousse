@@ -115,6 +115,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_yaml",
+ "stybulate",
  "tempfile",
  "tokio",
  "uuid",
@@ -1743,7 +1744,7 @@ dependencies = [
  "scopeguard",
  "unicode-segmentation",
  "unicode-width",
- "utf8parse",
+ "utf8parse 0.2.0",
  "winapi 0.3.8",
 ]
 
@@ -2006,6 +2007,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "213701ba3370744dcd1a12960caa4843b3d68b4d1c0a5d575e0d65b2ee9d16c0"
 
 [[package]]
+name = "strip-ansi-escapes"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d63676e2abafa709460982ddc02a3bb586b6d15a49b75c212e06edd3933acee"
+dependencies = [
+ "vte",
+]
+
+[[package]]
 name = "strsim"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2016,6 +2026,17 @@ name = "strsim"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
+
+[[package]]
+name = "stybulate"
+version = "1.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cada1923d9c24caf8cdd074e56ac067e4a8e11ae79cb37f092a51f492f5e1786"
+dependencies = [
+ "ansi_term 0.12.1",
+ "strip-ansi-escapes",
+ "unicode-width",
+]
 
 [[package]]
 name = "subtle"
@@ -2323,6 +2344,12 @@ dependencies = [
 
 [[package]]
 name = "utf8parse"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8772a4ccbb4e89959023bc5b7cb8623a795caa7092d99f3aa9501b9484d4557d"
+
+[[package]]
+name = "utf8parse"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "936e4b492acfd135421d8dca4b1aa80a7bfc26e702ef3af710e0752684df5372"
@@ -2359,6 +2386,15 @@ name = "void"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6a02e4885ed3bc0f2de90ea6dd45ebcbb66dacffe03547fadbb0eeae2770887d"
+
+[[package]]
+name = "vte"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4f42f536e22f7fcbb407639765c8fd78707a33109301f834a594758bedd6e8cf"
+dependencies = [
+ "utf8parse 0.1.1",
+]
 
 [[package]]
 name = "walkdir"
