@@ -11,11 +11,11 @@ mod utils;
 #[derive(Clap)]
 struct SecretStore {
     /// Use a specific aws profile, overrides config and env settings
-    #[clap(short = "P", long = "profile", global = true)]
+    #[clap(short = 'P', long = "profile", global = true)]
     profile: Option<String>,
 
     /// The region where the secret is, overrides config and env settings
-    #[clap(short = "R", long = "region", global = true)]
+    #[clap(short = 'R', long = "region", global = true)]
     region: Option<String>,
 
     #[clap(subcommand)]
@@ -37,7 +37,7 @@ enum SubCommands {
 #[tokio::main]
 async fn main() -> Result<()> {
     let opt: SecretStore = SecretStore::parse();
-    let manager = SecretsManagerClient::new_client(opt.profile.clone(), opt.region)?;
+    let manager = SecretsManagerClient::new_client(opt.profile.clone(), opt.region).await?;
 
     // manager.list().await;
     match opt.cmd {
